@@ -1,5 +1,5 @@
 
-all: 01 02 03 04
+all: 01 02 03 04 05
 
 
 01: 01a 01b
@@ -31,3 +31,12 @@ all: 01 02 03 04
 
 04b: 04.in
 	./04b.awk <$<
+
+
+05: 05a 05b
+
+05a: 05.in
+	echo 1 | awk -f 05.awk -v program=$<
+05b: 05.in
+	echo 5 | awk -f 05.awk -v program=$<
+
