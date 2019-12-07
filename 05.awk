@@ -53,7 +53,7 @@ BEGIN {
 			break;
 		case 4:	# outword op1
 			op1 = fetch(insn, 1);
-			print op1;
+			print op1; fflush();
 			pc += 2;
 			break;
 		case 5:	# bnz op1 op2
@@ -87,12 +87,9 @@ BEGIN {
 			
 		default:
 			printf("Illegal instruction %d at %d\n", insn, pc);
-			exit(1);
+			exit 1;
 		}
 	}
-}
 
-{
-	print("Unexpected Input");
-	exit(1);
+	exit 0;
 }
