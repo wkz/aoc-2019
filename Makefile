@@ -1,5 +1,5 @@
 
-all: 01 02 03 04 05 06 07
+all: 01 02 03 04 05 06 07 08
 
 
 01: 01a 01b
@@ -58,3 +58,11 @@ all: 01 02 03 04 05 06 07
 07b: 07.in
 	./07b.sh $<
 
+
+08: 08a 08b
+
+08a: 08.in
+	awk -v width=25 -v height=6 -f 08a.awk <$<
+
+08b: 08.in
+	awk -v width=25 -v height=6 -f 08b.awk <$<
