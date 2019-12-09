@@ -1,5 +1,5 @@
 
-all: 01 02 03 04 05 06 07 08
+all: 01 02 03 04 05 06 07 08 09
 
 
 01: 01a 01b
@@ -66,3 +66,12 @@ all: 01 02 03 04 05 06 07 08
 
 08b: 08.in
 	awk -v width=25 -v height=6 -f 08b.awk <$<
+
+
+09: 09a 09b
+
+09a: 09.in
+	echo 1 | awk -f 09.awk -v program=$<
+09b: 09.in
+	echo 2 | awk -f 09.awk -v program=$<
+
