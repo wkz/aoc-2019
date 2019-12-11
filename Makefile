@@ -1,5 +1,5 @@
 
-all: 01 02 03 04 05 06 07 08 09 10
+all: 01 02 03 04 05 06 07 08 09 10 11
 
 
 01: 01a 01b
@@ -78,3 +78,11 @@ all: 01 02 03 04 05 06 07 08 09 10
 
 10: 10.in
 	./10.awk <$<
+
+
+11: 11a 11b
+
+11a: 11.in
+	echo seen | awk -f 11.awk -v program=$<
+11b: 11.in
+	echo print | awk -f 11.awk -v program=$< -v start=1
