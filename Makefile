@@ -86,3 +86,12 @@ all: 01 02 03 04 05 06 07 08 09 10 11
 	echo seen | awk -f 11.awk -v program=$<
 11b: 11.in
 	echo print | awk -f 11.awk -v program=$< -v start=1
+
+
+12: 12a 12b
+
+12a: 12.in
+	awk -f 12a.awk -v steps=1000 <$<
+
+12b: 12.in
+	awk -f 12b.awk <$<
