@@ -95,3 +95,12 @@ all: 01 02 03 04 05 06 07 08 09 10 11
 
 12b: 12.in
 	awk -f 12b.awk <$<
+
+
+13: 13a 13b
+
+13a: 13.in
+	awk -f 13.awk -v program=$< -v noun=1
+
+13b: 13.in
+	awk -f 13.awk -v program=$< -v noun=2
